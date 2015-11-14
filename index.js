@@ -2,6 +2,8 @@ var express = require('express');
 
 var app = express();
 
+var PORT = process.env.PORT || 3000;
+
 
 var middleware = require('./middleware');
 
@@ -24,6 +26,6 @@ app.get('/about', middleware.logger, function (req, res) { //when you view a pag
 
 //app.use(express.static(__dirname + '/public'));
 
-app.listen(3000, function() { //the second argument in app.listen is a function that gets called once the server starts
+app.listen(PORT, function() { //the second argument in app.listen is a function that gets called once the server starts
    console.log("express server started"); 
 });
